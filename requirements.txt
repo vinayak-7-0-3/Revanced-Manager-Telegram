@@ -1,0 +1,4 @@
+python-dotenv
+pyrofork
+TgCrypto-pyrofork
+aiohttp
