@@ -21,10 +21,10 @@ class Config(object):
         print("Telegram Bot: Essential Configs are missing")
         exit(1)
 
-    BASE_DIR = "./bot/"
-    WORKING_DIR = BASE_DIR + "STORAGE/"
-    TEMP_DIR = WORKING_DIR + "temp/"
-    PATCHES_DIR = WORKING_DIR + "patches/"
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    WORKING_DIR = os.path.join(BASE_DIR, "bot", "STORAGE/")
+    TEMP_DIR = os.path.join(WORKING_DIR, "TEMP/")
+    PATCHES_DIR = os.path.join(WORKING_DIR, "PATCHES/")
 
     # User defined patch file save directory
     CUSTOM_PATCH_FILE = PATCHES_DIR + "custom.rvp"

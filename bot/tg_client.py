@@ -3,7 +3,7 @@ from pyrogram import Client
 from bot import LOGGER, Config
 
 plugins = dict(
-    root="bot/modules"
+    root="bot/plugins"
 )
 
 class Bot(Client):
