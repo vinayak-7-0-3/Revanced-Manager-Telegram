@@ -24,14 +24,15 @@ class Config(object):
     BASE_DIR = "./bot/"
     WORKING_DIR = BASE_DIR + "STORAGE/"
     TEMP_DIR = WORKING_DIR + "temp/"
-    
-    # User defined patch file save directory
-    CUSTOM_PATCH_FILE = WORKING_DIR + "custom.rvp"
+    PATCHES_DIR = WORKING_DIR + "patches/"
 
+    # User defined patch file save directory
+    CUSTOM_PATCH_FILE = PATCHES_DIR + "custom.rvp"
+    # Default patch file fetched from github release
+    REVANCED_PATCH_FILE = getenv("REVANCED_PATCH_FILE", PATCHES_DIR + "default.rvp")
     # Latest CLI from github release
     REVANCED_CLI_PATH = getenv("REVANCED_CLI_PATH", WORKING_DIR + "cli.jar")
-    # Default patch file fetched from github release
-    REVANCED_PATCH_FILE = getenv("REVANCED_PATCH_FILE", WORKING_DIR + "patches/default.rvp")
+    
 
     REVANCED_CLI_RELEASES = getenv("REVANCED_CLI_RELEASES", "https://api.github.com/repos/ReVanced/revanced-cli/releases")
     REVANCED_PATCH_RELEASES = getenv("REVANCED_PATCH_RELEASES", "https://api.github.com/repos/ReVanced/revanced-patches/releases")
