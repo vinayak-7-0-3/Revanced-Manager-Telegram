@@ -37,3 +37,5 @@ class Config(object):
     REVANCED_CLI_RELEASES = getenv("REVANCED_CLI_RELEASES", "https://api.github.com/repos/ReVanced/revanced-cli/releases")
     REVANCED_PATCH_RELEASES = getenv("REVANCED_PATCH_RELEASES", "https://api.github.com/repos/ReVanced/revanced-patches/releases")
     REVANCED_API_URL = getenv("REVANCED_API_URL", "https://api.revanced.app/v4")
+
+    PATCH_TIMEOUT = getenv('PATCH_TIMEOUT', 600)

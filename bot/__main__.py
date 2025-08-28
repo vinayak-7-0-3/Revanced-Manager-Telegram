@@ -9,7 +9,7 @@ from .revanced.manager import revanced_manager
 
 
 async def main():
-    await revanced_manager.fetch_files()
+    await revanced_manager.setup()
 
     await revanced_bot.start()
     await idle()

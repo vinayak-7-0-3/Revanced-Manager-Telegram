@@ -30,3 +30,16 @@ async def download_file(session: ClientSession, url: str, path: str, retries=3):
             if attempt == retries:
                 raise DownloaderError("Download failed due to timeout.")
             await asyncio.sleep(2 ** attempt)
+
+
+def cleanup_after_patching(oapk, papk):
+    try:
+        os.remove(oapk)
+    except:pass
+    try:
+        os.remove(papk)
+    except:pass
+    try: # to remove the keystore
+        keystore = papk[:-3] + 'keystore'
+        os.remove(keystore)
+    except: pass
